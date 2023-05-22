@@ -1,0 +1,39 @@
+---
+title: "About Me"
+---
+
+### Research Interests
+
+At a large scale, my primary research interest is the application of geospatial data and earth observation to human-environment issues, and how we can improve geospatial data and methods to improve human livelihoods. More specifically, I am interested in:
+
+-   The application and advancement of geospatial data (particularly climate data) to environmental public health, both in the United States and globally.
+
+-   Identifying gaps in satellite rainfall products (TAMSAT, CHIRPS, IMERG, etc.) and how we can improve these datasets for public health, disease monitoring, and food security.
+
+-   The application and advancement of earth observation data for monitoring agrobiodiversity and agrobiodiversity change among smallholder farmers in South America, West Africa and Southern Africa.
+
+### Graduate School Research
+
+My current M.S research, as whole, focuses on how the unequal distribution of rain gauges impacts the accuracy of satellite rainfall products, using two different approaches: 1) who is left out in rain gauge networks (i.e: what is the profile of areas that do not have rain gauges, which are used to inform and validate satellite rainfall estimates) and 2) how does spatial autocorrelation impactthe accuracy of satellite rainfall validation, specifically in the context of merged gauges (gauges whose rainfall values are directly merged into satellite rainfall algorithms). My M.S project has three distinct goals:
+
+-   Analyze how rain gauges vary across the different human and physical geographies of Ghana
+
+-   "Traditionally" validate four commonly used SRFEs using rainfall metrics relevant to malaria transmission
+
+-   Examine the role of spatial autocorrelation on satellite rainfall validation metrics using rain gauge networks where the autocorrelation range has been extended (e.g. excluding gauges within 50km of a merged gauge).
+
+Outside of my M.S research, I have conducted other research projects that have utilized my GIScience skills in graduate school:
+
+-   During my first semester of graduate school, I worked with another graduate student and a professor to investigate inequities in walkability in San Francisco County. This research resulted in a term paper that was presented at AAG in 2021 and is currently going through the publication process.
+
+-   In the spring and summer of 2022, I worked on an independent project estimating the upper elevational limits of agriculture in the central Peruvian Andes, home to indigenous smallholder farmers. The project consisted of an extensive literature review on vegetation indices for crop identification, land cover analysis in mountainous regions, crop modeling, and socio-ecological systems. Unfortunately, due to data limitations, I was unable to complete the remote sensing/land cover analysis in full.
+
+### Undergraduate Education
+
+I received a BA in Geography with concentration in Community and Global Health in 2020 from Macalester College in Saint Paul, MN. I also had an "honorary" minor in Portuguese (I was a few credits short of the official minor). While at Macalester, I was on the Varsity Cross Country and Track teams, and was the head writer my senior year for the Hegemonocle, Macalester's humor magazine.
+
+I have been lucky to apply my GIS skills and other knowledge to a wide range of professional settings. During my sophomore year of college, I was a research and policy intern at Minnesota Brownfields, a non-profit whose mission is to promote brownfield cleanup and remediation for sustainable economic growth. My senior year of college, I was a student worker at the Minnesota Department of Health (MDH) in the Injury and Violence Prevention Unit. At MDH, my primary job was creating an excel database of police involved deadly force encounters from nationally recognized news outlets and crowdsourced databases. My work on this project was used to update MDH's methodology for classifying police involved deadly force encounters.
+
+### Other Interests
+
+Outside of academia and work, I enjoy running, road cycling, music, and sports, particularly basketball and baseball. I am hoping to showcase some of the sports analytics that I have done on this webpage.

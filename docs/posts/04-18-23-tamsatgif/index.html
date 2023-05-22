@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.335">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Ben Townsend">
+<meta name="dcterms.date" content="2023-04-18">
+
+<title>Ben Townsend - Satellite Rainfall GIF</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Ben Townsend</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../aboutme.html">
+ <span class="menu-text">About Me</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog.html">
+ <span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../dataresources.html">
+ <span class="menu-text">Data Resources</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/bentowns"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/ben-townsend-871913134?original_referer=https%3A%2F%2Fwww.google.com%2F"><i class="bi bi-linkedin" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Satellite Rainfall GIF</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">code</div>
+                <div class="quarto-category">analysis</div>
+                <div class="quarto-category">weather</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Ben Townsend </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">April 18, 2023</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<p><em>Note: This is a project that created back in April 2023, on my previous website. Additionally, the full code for this project is available in a Github repository <a href="https://github.com/bentowns/GhanaTimeseries">here</a>.</em></p>
+<section id="part-1-introduction" class="level3">
+<h3 class="anchored" data-anchor-id="part-1-introduction"><strong>Part 1: Introduction</strong></h3>
+<p>Something that I have wanted to do for a while now is a make an animation of monthly rainfall patterns in Ghana using satellite data. However, I had been hesitant to start, worried that netCDF files and gganimate would be complex and time extensive. Fortunately, both netCDF files and gganimate were pretty easy to use.</p>
+<section id="part-1a-datasets" class="level4">
+<h4 class="anchored" data-anchor-id="part-1a-datasets"><strong>Part 1A: Datasets</strong></h4>
+<p>There were two datasets used in this project:</p>
+<ul>
+<li>Monthly Rainfall Data from TAMSAT, from January 1983 to December 2022</li>
+<li>Shapefile of Ghana, used for cropping and masking the rainfall data</li>
+</ul>
+<p>The monthly rainfall data from TAMSAT was downloaded as a .nc file from the IRI Climate Library. This includes all available months from January 1983 to December 2022.</p>
+</section>
+<section id="part-1b-packages" class="level4">
+<h4 class="anchored" data-anchor-id="part-1b-packages"><strong>Part 1B: Packages</strong></h4>
+<p>Below are a list of the packages I used for this project, and a brief explanation of the purpose of each package</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(raster) <span class="co">#For raster preprocessing</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf) <span class="co">#For loading the Ghana shapefile</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ncdf4) <span class="co">#For opening rainfall files</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse) <span class="co">#For any necessary data transformations and plotting</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(exactextractr) <span class="co">#For extracting pixel values</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(parallel) <span class="co">#For parallel computing</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(foreach) <span class="co">#For parallel computing</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(doParallel) <span class="co">#For parallel computing</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tictoc) <span class="co">#For parallel computing</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gganimate) <span class="co">#For creating gifs</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="part-1c-functions" class="level4">
+<h4 class="anchored" data-anchor-id="part-1c-functions"><strong>Part 1C: Functions</strong></h4>
+<p>I created two functions for this project to speed up some of the steps. The first function is called CropRaster, which streamlines the process of cropping raster data to the boundaries of a shapefile. It uses the crop and the mask functions from the raster package. The code for this function is below:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>CropRaster <span class="ot">&lt;-</span> <span class="cf">function</span>(raster, boundary) {</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  raster.crop <span class="ot">&lt;-</span> <span class="fu">crop</span>(raster, <span class="fu">extent</span>(boundary))</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  raster.mask <span class="ot">&lt;-</span> <span class="fu">mask</span>(raster.crop, boundary)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(raster.mask)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The second function is RasterToDataframe, which streamlines the process of transforming a raster dataset into a dataframe. It uses the rasterToPoint function from the raster package to transform a raster in point data, and then uses the as.data.frame function to transform the point data into a dataframe. The resulting product is a dataframe with three variables: X Coordinate, Y Coordinate, and Value. The code for this function is below:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>RasterToDataframe &lt;- function(raster) {</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  raster.pts &lt;- rasterToPoints(raster)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  raster.df &lt;- as.data.frame(raster.pts)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  return(raster.df)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="part-2-image-processing" class="level3">
+<h3 class="anchored" data-anchor-id="part-2-image-processing"><strong>Part 2: Image Processing</strong></h3>
+<p>To ensure that the satellite rainfall was ready for animation, there were few preprocessing steps that occurred.</p>
+<section id="part-2a-converting-netcdf-files-into-rasters" class="level4">
+<h4 class="anchored" data-anchor-id="part-2a-converting-netcdf-files-into-rasters"><strong>Part 2a: Converting NetCDF files into Rasters</strong></h4>
+<p>There are two steps for converting the NetCDF files into rasters. The first to extract the variables from the netCDF/nc files.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>lon <span class="ot">&lt;-</span> <span class="fu">ncvar_get</span>(TAMSATMonth.nc, <span class="st">"X"</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>lat <span class="ot">&lt;-</span> <span class="fu">ncvar_get</span>(TAMSATMonth.nc, <span class="st">"Y"</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>rainfall <span class="ot">&lt;-</span> <span class="fu">ncvar_get</span>(TAMSATMonth.nc, <span class="st">"rfe"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>There are three variables that we need to extract from the “TAMSATMonth.nc” file. We need to extract the location of what will become the pixels in the raster dataset, from the variables “X” and “Y”, which are longitude and latitude, respectively. We also need to extract the pixel value (a.k.a the rainfall amounts) for each month from the “rfe” (rain fall estimate) variable.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">480</span>){</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  TAMSATMonth.raster[[i]] <span class="ot">&lt;-</span> <span class="fu">raster</span>(rainfall[, , i], <span class="at">xmn=</span><span class="fu">min</span>(lat), </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">x =</span> <span class="at">xmx=</span><span class="fu">max</span>(lat), </span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">ymn=</span><span class="fu">min</span>(lon), <span class="at">ymx=</span><span class="fu">max</span>(lon), </span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">crs=</span><span class="fu">CRS</span>(<span class="st">"+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs+ towgs84=0,0,0"</span>))</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  TAMSATMonth.raster[[i]] <span class="ot">&lt;-</span> <span class="fu">t</span>(TAMSATMonth.raster[[i]])</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  TAMSATMonth.raster[[i]] <span class="ot">&lt;-</span> <span class="fu">flip</span>(TAMSATMonth.raster[[i]], <span class="dv">2</span>)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The next step is to transform the extracted variables into RasterLayers using the raster function from the raster package. In some ways, the “rainfall” object is already a raster, each entry represents the rainfall amount for a location, with rows serving as the x-coordinate and the columns representing the y-coordinates (for example rainfall[1, 1, 1], will give you the rainfall amount in the northwestern most pixel for January 1983). However, the rainfall object has no associated geographic reference with it, so we must use the “lon” and “lat” objects to define the extent of the raster data. We must also assign a coordinate reference system (crs) to the rasters as well, which is WGS 84. The last step is to transpose and flip the coordinates of raster, so that the pixels are in the correct location.</p>
+</section>
+<section id="part-2b-creating-mean-monthly-rainfall-rasters" class="level4">
+<h4 class="anchored" data-anchor-id="part-2b-creating-mean-monthly-rainfall-rasters"><strong>Part 2b: Creating mean monthly rainfall rasters</strong></h4>
+<p>For this part, we need to calculate the mean rainfall for each month. This step was a bit tricky. Our new raster, TAMSATMonth.raster, is a list of 480 rasters. In order to calculate the mean rainfall for each month, I had to add each raster to the mean function (typing out the name of the raster 40 times for each month). I’m not going to include the code here because it is kind of messy.</p>
+</section>
+</section>
+<section id="part-3-creating-the-animated-time-series" class="level3">
+<h3 class="anchored" data-anchor-id="part-3-creating-the-animated-time-series"><strong>Part 3: Creating the Animated Time Series</strong></h3>
+<p>The final step in this project was to create the animation using gganimate. To do so however, requires transforming the raster data into a dataframe using the RasterToDataFrame function from above.</p>
+<p>Once a dataframe for each month has been created, a new column called “Month” is created for every dataframe, with the value of the dataframe corresponding to the month that is represented by the dataframe. Next, the rbind function is used to combine the 12 dataframes together into one. The last step was to use the factor function to order the observations by month, so that the months are displayed in the correct order in the animation.</p>
+<section id="part-3a-gganimate" class="level4">
+<h4 class="anchored" data-anchor-id="part-3a-gganimate"><strong>Part 3A: gganimate</strong></h4>
+<p>Now that all of the data preprocessing is done, we can make an animation of rainfall in Ghana. Below is the code used to make the animation:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> Ghana) <span class="sc">+</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_raster</span>(<span class="at">data =</span> MonthlyMean, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">fill =</span> layer)) <span class="sc">+</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_gradientn</span>(<span class="at">colours=</span><span class="fu">c</span>(<span class="st">"#001137"</span>, <span class="st">"#0aab1e"</span>, <span class="st">"#e7eb05"</span>, <span class="st">"#ff4a2d"</span>, <span class="st">"#e90000"</span>),</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>                       <span class="at">name=</span><span class="st">"Rainfall (mm)"</span>) <span class="sc">+</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">'Month: {closest_state}'</span>, <span class="at">x =</span> <span class="st">"Longitude"</span>, <span class="at">y =</span> <span class="st">"Latitude"</span>) <span class="sc">+</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">transition_states</span>(Month, <span class="at">transition_length =</span> <span class="dv">1</span>, <span class="at">state_length =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The code for the animation looks very similar to normal ggplot until you get to the fifth argument (line 6), the argument “title” has {closest_state}. I’ll get to this in a moment, it will make more sense to explain what is going on in line 7 first.</p>
+<p>In line 7, there is a function called transition_states, that determines the parameters of the animation. There are three required arguments:</p>
+<ul>
+<li><p>states: This is the column to be animated. “states” refers to the categories displayed in the column, which in this case in months. The states argument is similar to the facet_wrap or color arguements in ggplot.</p></li>
+<li><p>transition_length: Refers to the length of the transition in the animation. This is a relative amount, based on the number of states in the dataset.</p></li>
+<li><p>state_length: Refers to the length of the states in the animation. This is a relative amount, based on the number of stats in the dataset.</p></li>
+</ul>
+<p>The transition_length and state_length arguments can be a bit obscure; my recommendation is that you plug and play the numbers you into the arguments, but make sure that the transition_length argument is less than the state_length argument.Back to line 6 quickly - in the argument “title”, {closest_state} will show the name of the month that is closest to the current frame.</p>
+<p>To actually display the animation, we need to save our ggplot as an object (“p”), and then use the animate function to display the animation.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">animate</span>(p)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The animate function might take a minute to load, but once it is done, the animation will be displayed in your viewer. When the animation is to your liking, you can use the save_animation function to save your animation as a gif, with the first argument being the name you wish to give the file, and the second argument being the animation you want to save.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">save_animation</span>(<span class="st">"MeanRainfallTAMSAT.gif"</span>, <span class="at">animation =</span> <span class="fu">last_animation</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Below is the final product:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="MeanRainfallTAMSAT.gif" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>The animation does a good job at showing the general seasonal rainfall trends in Ghana. The animation, however, is a bit a clunky when it hits July, but this is because there is a small dry season in southern Ghana in July and August.</p>
+</section>
+</section>
+<section id="next-stepsfuture-directions" class="level3">
+<h3 class="anchored" data-anchor-id="next-stepsfuture-directions"><strong>Next Steps/Future Directions</strong></h3>
+<p>If were to build upon this project in the future, below are a few things I would consider doing the following:</p>
+<p>*Tweak the parameters of the animation frame length to create a smoother transition</p>
+<p>*Change the temporal extent and resolution of the rainfall (ex. do daily rainfall for the month of May.)</p>
+<p>*Try to visualize a single storm rather than long term rainfall patterns.</p>
+<p>*Find a more efficient method to parse out the months in the list of rasters</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

@@ -1,0 +1,56 @@
+---
+title: "Website Introduction"
+author: "Ben Townsend"
+date: "2023-05-09"
+categories: [news]
+---
+
+Welcome to my github website! On this webpage, I will showcase and write about my different coding projects. Most of these posts will focus on geospatial data, geography, weather (specifically rainfall), and agriculture. I will mostly be using R and Python.
+
+The creation of this website was inspired by a class I took this spring (2023) called Core Spatial Programming. In this class, we were required to make github website. I initially made a website from template that was primarily built on html code (with CSS and Javascript), but I decided to switch to a different website template (Quarto Blog), because it was a better fit for the type of posts I am planning to make.
+
+For anyone who is interested, I have copied the my initial learning portfolio (which I wrote at the start of class in January 2023). I did not get to complete everything on the list, which I wasn't expecting to. The ambitiousness of the list was to inspire and motivate me, and to give me ideas when I am having coder's block (is that a phrase?).
+
+## GEOG 560 Learning Portfolio
+
+This semester (Spring 2023), I am taking a class called Core Spatial Programming, which focuses on improving the programming skills of geographers. For the class, we are making learning/coding/programming portfolios to display our programming skills and to show how our programming skills have improved over the semester. I have decided to host my portfolio here. Below for my learning goals for this class (NOTE: I do not intend to accomplish all of the learning goals listed on this website in one semester, I expect to continue to grow this website over time).
+
+### Learning Goals
+
+Below are a list of coding skills that I wanted to improve on over the semester (and in the future!). I've organized them by programming langauge. For reference my skill level in R is somewhere between intermediate and advanced, my skill level in Python is somewhere between beginnner and intermediate.
+
+#### R Programming
+
+-   Improve the efficiency of my code
+
+    -   Length - how can I shorten my scripts to use less code and less objects?
+    -   Time - how can I make my code run more efficiently?
+
+-   Improve the organization of my scripts
+
+    -   What are best practices for making code easy to read, both for myself and for collaborators?
+    -   How do I organize the contents of my scripts, so that from a content standpoint, they are logically put together?
+    -   How do I create a "ladder"/workflow of scripts that is flexible?
+
+-   Create shiny apps/web apps for the interactive display of rainfall data, environmental data, and basketball data
+
+-   Create packages that perform functions relevant to geospatial data, rainfall, etc.
+
+-   Learn how to do machine learning, clustering and neural networks (if possible)
+
+#### Python Programming
+
+-   Learn how to properly set up a python environment on my laptop for a desktop application and jupyter notebooks (So that it complements google colab)
+-   Improve my Python skills so that they are at a similar level as my R skills
+    -   Feel comfortable doing data manipulation
+    -   Feel comfortable displaying and manipulating geospatial data
+    -   Feel comfortable with creating visualizations
+    -   Have a solid understanding of key packages (both geospatial and non-geospatial)
+-   Be able to apply the skills I learned in my machine learning class to my M.S research and research interests
+
+#### Javascript (if time)
+
+If there is time, I would also like to spend time learning JavaScript, for geospatial applications, such as:
+
+-   Google Earth Engine (I have some experience with GEE)
+-   D3, to create interactive maps (I do not have any existing knowledge on D3)

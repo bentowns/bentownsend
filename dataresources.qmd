@@ -1,0 +1,47 @@
+---
+title: "Data Resources"
+---
+
+This is a page I made to serve as a homebase for data resources (specifically geospatial data) for others and myself. The datasets and links below are ones that I have come across during classes, my own research, and through assisting Intro to GIS students with their own projects.
+
+***If there are any datasets that you think I should add, or that I unintentionally misrepresented, please let me know! As always, make sure you read the terms of use and give proper attribution when required!***
+
+#### General Resources
+
+-   [Earth Engine Data Catalog](https://developers.google.com/earth-engine/datasets/catalog): The Earth Engine Data Catalog showcases the wide range of data available for use in Google Earth Engine. There is a wide range of datasets, but a majority of the data is focused on the environment (vegetation, land cover, climate data). You can click on a dataset to learn more, and usually there is a link to the homepage of the dataset (in case you want to download the data to use in a non-GEE platform).
+
+-   State/Local Government Open Data: If you are working on a project about a specific location, the best place to start is that location's open site. Some examples include [City of Los Angeles](https://data.lacity.org), [District of Columbia](https://opendata.dc.gov), and [Wisconsin DNR](https://data-wi-dnr.opendata.arcgis.com)
+
+-   [UC-Irvine Machine Learning Repository](https://archive.ics.uci.edu/ml/index.php): This is a good all round resource for practicing machine learning techniques.
+
+#### Vector Based GIS Data
+
+-   [CalEnviroScreen](https://oehha.ca.gov/calenviroscreen/report/calenviroscreen-40): This is one of my favorite datasets, as it's great for a lot of different applications: statistical inference, geographically weighted regression, data visualization, and data manipulation. It comes in both vector and table format.
+
+-   [Natural Earth](https://www.naturalearthdata.com/features): Great resource for creating reference maps.
+
+-   [IPUMS](https://www.ipums.org): Includes historical census data for the United States and other countries, along with microsurveys on a wide range of topics. I believe you need an academic email to sign up.
+
+#### Terrestrial Data
+
+-   [Earth Explorer](https://earthexplorer.usgs.gov) and/or [GloVis](https://glovis.usgs.gov): These are two different websites/applications that can be used to download the suite of U.S. based satellite imagery, such as Landsat. You need an account to download data.
+
+-   [Copernicus Open Access Hub](https://scihub.copernicus.eu): Website for downloading Sentinel-1 and Sentinel-2 data. You need an account to download data.
+
+-   [Planet](https://www.planet.com): Provides free satellite imagery for students through their [Research and Education Program](https://www.planet.com/markets/education-and-research) Planet has some of the highest resolution imagery available at 3 m resolution (along with RapidEye data, at 5 m resolution).
+
+-   [NASA Earth Data](https://www.earthdata.nasa.gov): Hosts a wide range of satellite data products, such as EVI and NDVI products. You need an account to download data.
+
+#### Climate/Weather Data
+
+-   [IRI Climate Library](https://iridl.ldeo.columbia.edu): Has a wide range of climate and weather products available for download. Great source for downloading a large amount of climate data at once. There is a slight learning curve with navigating the website's interface.
+
+-   [TAMSAT](https://www.tamsat.org.uk): Satellite rainfall data for Africa. Data is available as far back as 1983, and the spatial resolution of the data is 4km. Data is available at the daily, pentad, dekad, monthly and seasonal levels.
+
+-   [CHIRPS](https://www.chc.ucsb.edu/data): Satellite rainfall data for anywhere on earth between 50 North and 50 South. Data is available as far back as 1981, and the spatial resolution of the data is roughly 5km.
+
+#### Useful Packages to collect data in R
+
+-   [tidycensus](https://walker-data.com/tidycensus): This is a great R package for census data. The author of the package also has a very thorough guide for using the package
+
+-   [chirps](https://github.com/ropensci/chirps): This is a useful R package for using CHIRPS data in R without having to download and store the data itself.

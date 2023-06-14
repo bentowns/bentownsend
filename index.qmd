@@ -12,4 +12,4 @@ about:
       href: https://github.com/bentowns
 ---
 
-Hello! Thank you for visiting my website. I am currently a graduate student at Penn State, working towards a M.S in Geography. I will be graduating in May 2023. I'm interested in using GIScience and big data to solve and understand human-environment issues in the realm of public health, disease monitoring, and food security.
+Hello! Thank you for visiting my website. I am currently a graduate student at Penn State, working towards a M.S in Geography. I will be graduating in May 2023. I'm interested in using GIScience and big data to solve and understand human-environment issues in the realm of land cover change, food security, public health, and disease monitoring.

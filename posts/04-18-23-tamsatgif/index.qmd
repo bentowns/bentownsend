@@ -26,7 +26,7 @@ The monthly rainfall data from TAMSAT was downloaded as a .nc file from the IRI 
 
 #### **Part 1B: Packages**
 
-Below are a list of the packages I used for this project, and a brief explanation of the purpose of each package
+Below are a list of the packages I used for this project, and a brief explanation of the purpose of each package.
 
 ```{r}
 library(raster) #For raster preprocessing
@@ -53,7 +53,7 @@ CropRaster <- function(raster, boundary) {
 }
 ```
 
-The second function is RasterToDataframe, which streamlines the process of transforming a raster dataset into a dataframe. It uses the rasterToPoint function from the raster package to transform a raster in point data, and then uses the as.data.frame function to transform the point data into a dataframe. The resulting product is a dataframe with three variables: X Coordinate, Y Coordinate, and Value. The code for this function is below:
+The second function is RasterToDataframe, which streamlines the process of transforming a raster dataset into a dataframe. It uses the rasterToPoint function from the raster package to transform a raster into point data, and then uses the as.data.frame function to transform the point data into a dataframe. The resulting product is a dataframe with three variables: X Coordinate, Y Coordinate, and Value. The code for this function is below:
 
 ```{verbatim}
 #| code-fold: true
@@ -66,7 +66,7 @@ RasterToDataframe <- function(raster) {
 
 ### **Part 2: Image Processing**
 
-To ensure that the satellite rainfall was ready for animation, there were few preprocessing steps that occurred.
+To ensure that the satellite rainfall was ready for animation, a few preprocessing steps are required.
 
 #### **Part 2a: Converting NetCDF files into Rasters**
 
@@ -145,7 +145,7 @@ Below is the final product:
 
 ![](MeanRainfallTAMSAT.gif){fig-align="center"}
 
-The animation does a good job at showing the general seasonal rainfall trends in Ghana. The animation, however, is a bit a clunky when it hits July, but this is because there is a small dry season in southern Ghana in July and August.
+The animation does a good job at showing the general seasonal rainfall trends in Ghana. The animation, however, is a bit a clunky when it hits July, but this is because there is a small dry season in southern Ghana during July and August, shifting the areas of high rainfall to the north.
 
 ### **Next Steps/Future Directions**
 

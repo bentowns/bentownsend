@@ -6,11 +6,11 @@ title: "About Me"
 
 At a large scale, my primary research interest is the application of geospatial data and earth observation to human-environment issues, and how we can improve geospatial data and methods to improve human livelihoods. More specifically, I am interested in:
 
+-   The application and advancement of earth observation data for agricultural land change, monitoring agrobiodiversity, and agrobiodiversity change among smallholder farmers in South America, West Africa and Southern Africa.
+
+-   Identifying gaps in satellite rainfall products (TAMSAT, CHIRPS, IMERG, etc.) and how we can improve these datasets for agriculture and public health.
+
 -   The application and advancement of geospatial data (particularly climate data) to environmental public health, both in the United States and globally.
-
--   Identifying gaps in satellite rainfall products (TAMSAT, CHIRPS, IMERG, etc.) and how we can improve these datasets for public health, disease monitoring, and food security.
-
--   The application and advancement of earth observation data for monitoring agrobiodiversity and agrobiodiversity change among smallholder farmers in South America, West Africa and Southern Africa.
 
 ### Graduate School Research
 

@@ -13,20 +13,20 @@ image: "YoloCoSAVI.png"
 
 ### **Part 1: Introduction**
 
-One of the research projects I worked on early during my time in graduate school was to analyze the upper elevation limit of agriculture and agrobiodiversity change in the Peruvian Andes. For this project, I did an extensive literature review of on the remote sensing of agriculture and using machine learning techniques to classify crops by species. Unfortunately, I was unable to complete the remote sensing/machine learning portion of the project, due to unforeseen data limitations.For a while now, I have wanted to apply my skills I have learned from this experience.
+One of the research projects I worked on early during my time in graduate school was to analyze the upper elevation limit of agriculture and agrobiodiversity change in the Peruvian Andes. For this project, I did an extensive literature review on the remote sensing of agriculture and using machine learning techniques to classify crops by species. Unfortunately, I was unable to complete the remote sensing/machine learning portion of the project, due to unforeseen data limitations. For a while now, I have wanted to apply my skills I have learned from this experience.
 
-For this project, I used Random Forests and Support Vector Machine algorithms to classify four different crops in Yolo County, CA, which is just west of Sacramento. I used both R and Python for this project: R was used to clean the data, calculate vegetation indices, and to extract pixel values to the crop fields. Python (run in google colab) was used for machine learning.
+For this project, I used Random Forests and Support Vector Machine algorithms to classify four different crops in Yolo County, CA, which is just west of Sacramento. I used both R and Python for this project: R was used to clean the data, calculate vegetation indices, and to extract pixel values to the crop fields. Python (run in google colab) was used for running the machine learning algorithms.
 
 #### **Part 1A: Datasets**
 
-There were two datasets that were used in this project:
+Two datasets that were used in this project:
 
 -   Level 2A Sentinel-2 data of Yolo County, from June 28th, 2020
 -   A shapefile of Crops in Yolo County, CA for 2020 (from Esri Open Data/Yolo County)
 
 #### **Part 1B: Packages**
 
-Below are a list of the R packages I used for this project, and a brief explanation of how the package was used in this project.
+Below are a list of the R packages I used for this project, and a brief explanation of how the package was used in this project:
 
 ```{r}
 library(raster) #Uploading sentinel data
@@ -39,7 +39,7 @@ library(doParallel) #For parallel processing
 library(tictoc) #For parallel processing
 ```
 
-Below are a list of the Python packages I used for this project, and a brief explanation of how the package was used in this project.
+Below are a list of the Python packages I used for this project, and a brief explanation of how the package was used in this project:
 
 ```{python}
 import pandas as pd #For Data Manipulation
@@ -53,7 +53,7 @@ from sklearn import preprocessing #For normalizing data (SVM Only)
 
 #### **Part 1C: Functions (Vegetation Indices)**
 
-For this project, I created functions to calculate five vegetation indices that are present in the agricultural remote sensing literature:
+For this project, I created functions to calculate five vegetation indices that are present in the literature of the remote sensing of agriculture:
 
 ```{r}
 #Enhanced Vegetation Index (EVI)
@@ -96,7 +96,7 @@ NDTI <- function(B11, B12) {
 
 ### **Part 2: Data Preparation**
 
-The end goal of the data preparation section in R is to create a csv file of each walnut, almond, grape (wine) and olive field with following columns:
+The end goal of the data preparation section in R is to create a csv file of each walnut, almond, grape (wine) and olive field with the following columns:
 
 -   Crop Type of the field (walnut, almond, grape or olive) (1 column)
 -   The mean reflectance value for all pixels in a crop field for Band 2 (Blue), Band 3 (Green), Band 4 (Red), Band 5 (Red-Edge), Band 6 (Red-Edge), Band 7 (Red-Edge), Band 8 (NIR), Band 8a (NIR), Band 11 (SWIR), Band 12 (SWIR)
@@ -104,7 +104,7 @@ The end goal of the data preparation section in R is to create a csv file of eac
 
 #### **Part 2A: Image Processing**
 
-There are two steps in this part. First, the bands from the satellite images must be divided by 10000 to get the reflectance values (the bands are not automatically at reflectance value due to storage and technical reasons). The code is pretty straightforward
+There are two steps in this part. First, the bands from the satellite images must be divided by 10000 to get the reflectance values (the bands are not automatically at reflectance value due to storage and technical reasons).
 
 ```{r}
 for (i in 1:4){
@@ -127,18 +127,18 @@ Crops$EVI <- exact_extract(EVIYoloCo, Crops, "mean")
 
 #### **Part 2C: Filtering Fields by Crop Type**
 
-The next part is to filter the crops dataset to include only the fields that are walnut, almond, grape (wine) or olive crops. These crops were selected because they had the highest number of observations in the dataset. This can be done using dplyr:
+The next part is to filter the crops dataset to include only the fields that are walnut, almond, grape (wine) or olive crops. These crops were selected because they had the highest number of observations in the dataset. Filtering was done using dplyr:
 
 ```{r}
 Crops <- Crops %>% filter(croptype == "OLIVE" | croptype == "WALNUT" | 
                           croptype == "ALMOND" | croptype == "GRAPE, WINE")
 ```
 
-Note: This part can be done before extracting the pixel values, it depends on personal preference.
+Note: This part (2C) can be done before extracting the pixel values, it depends on personal preference.
 
 ### **Part 3: Machine Learning Classification**
 
-I ran two different machine learning models for classifying the crops, using the sklearn package in python: random forests and support vector machine (SVM). For the random forest model, the number of trees was 80. For the SVM model, I used a linear kernel and C parameter of 15. For both models, the train/test split was 70/30.
+I ran two different machine learning models for classifying the crops, using the sklearn package in python: random forests and linear support vector machine (SVM). For the random forest model, the number of trees was 80. For the SVM model, I used a linear kernel and C parameter of 15. For both models, the train/test split was 70/30.
 
 #### **Part 3A: Random Forests**
 
@@ -158,7 +158,7 @@ print('Training set score: {:.4f}'.format(forest.score(X_train, Y_train)))
 print('Test set score: {:.4f}'.format(forest.score(X_test, Y_test)))
 ```
 
-The random forests classifier was very accurate, as the accuracy score for the training dataset was 100%, while the accuracy score the test dataset was 87%. However, the 13% difference between the training and test scores suggests overfitting. We can take a closer look into the classification of the crops using a confusion matrix:
+The random forests classifier was very accurate, as the accuracy score for the training dataset was 100%, while the accuracy score the test dataset was 87%. However, the 13% difference between the training and test datasets suggests overfitting. We can take a closer look into the classification of the crops using a confusion matrix:
 
 ```{python}
 #Create confusion matrix for Random Forests
@@ -171,13 +171,11 @@ cm_matrix = pd.DataFrame(data=confusionmatrix, columns=['Predict Almond', 'Predi
 sns.heatmap(cm_matrix, annot=True, fmt='d', cmap='YlGnBu')
 ```
 
-![Caption](YoloCropsRF.png)
-
-Above is a confusion matrix for the test datasets and its predictions for the random forests model. The model was accurate 92.6% of the time for almonds, 86.6% of the time for grapes, 68.4% of the time for olives, and 82.5% of the time for walnuts. The most common misclassification was walnuts being classified as almonds (12 times)
+![Caption](YoloCropsRF.png) Above is a confusion matrix for the test dataset and its predictions for the random forests model. The model was accurate 92.6% of the time for almonds, 86.6% of the time for grapes,68.4% of the time for olives, and 82.5% of the time for walnuts. The most common misclassification was walnuts being classified as almonds (12 times).
 
 #### **Part 3B: Support Vector Machine**
 
-There is one additional preprocessing steps that needs to take place before running the SVM model, which is to normalize the data:
+There is one additional preprocessing step that needs to take place before running the SVM model, which is to normalize the data:
 
 ```{python}
 #Normalize the input data
@@ -204,7 +202,7 @@ print('Training set score: {:.4f}'.format(linear_svc.score(X_train, Y_train)))
 print('Test set score: {:.4f}'.format(linear_svc.score(X_test, Y_test)))
 ```
 
-The SVM classifier was less accurate than the random forests classifier, as the accuracy score for the training dataset was 88%, while the accuracy score the test dataset was 84%. However, the SVM model had less overfitting than the random forests model, with a 4% difference between the training and test scores. We can take a closer look into the classification of the crops using a confusion matrix:
+The SVM classifier was less accurate than the random forests classifier, as the accuracy score for the training dataset was 88%, while the accuracy score for the test dataset was 84%. However, the SVM model had less overfitting than the random forests model, with a 4% difference between the training and test scores. We can take a closer look into the classification of the crops using a confusion matrix:
 
 ```{python}
 #Create confusion matrix for Random Forests
@@ -223,4 +221,7 @@ sns.heatmap(cm_matrix, annot=True, fmt='d', cmap='YlGnBu')
 
 In future, some improvements I would make to the project include:
 
-*Expand the number of crops being classified.* Spend more time tuning the hyperparameters for the machine learning models. *Use neural networks to classify crop type.* Try to run the entire project in one language (R or Python).
+-   Expand the number of crops being classified.
+-   Spend more time tuning the hyper-parameters for the machine learning models.
+-   Use neural networks to classify crop type.
+-   Try to run the entire project in one language (R or Python).

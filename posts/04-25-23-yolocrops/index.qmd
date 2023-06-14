@@ -37,11 +37,12 @@ library(parallel) #For parallel processing
 library(foreach) #For parallel processing
 library(doParallel) #For parallel processing
 library(tictoc) #For parallel processing
+library(reticulate) #For python compatability
 ```
 
 Below are a list of the Python packages I used for this project, and a brief explanation of how the package was used in this project:
 
-```{python}
+```{python, reticulate}
 import pandas as pd #For Data Manipulation
 import seaborn as sns #For plotting confusion matrix
 from sklearn.ensemble import RandomForestClassifier
@@ -204,7 +205,7 @@ print('Test set score: {:.4f}'.format(linear_svc.score(X_test, Y_test)))
 
 The SVM classifier was less accurate than the random forests classifier, as the accuracy score for the training dataset was 88%, while the accuracy score for the test dataset was 84%. However, the SVM model had less overfitting than the random forests model, with a 4% difference between the training and test scores. We can take a closer look into the classification of the crops using a confusion matrix:
 
-```{python}
+```{python} 
 #Create confusion matrix for Random Forests
 from sklearn.metrics import confusion_matrix
 confusionmatrix=confusion_matrix(Y_test, Y_predRF)

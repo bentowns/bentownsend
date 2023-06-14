@@ -193,11 +193,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><em>Note: This is a project that created back in April 2023, on my previous website. Additionally, the full code for this project is available in a Github repository <a href="https://github.com/bentowns/YoloCountyCrops">here</a>.</em></p>
 <section id="part-1-introduction" class="level3">
 <h3 class="anchored" data-anchor-id="part-1-introduction"><strong>Part 1: Introduction</strong></h3>
-<p>One of the research projects I worked on early during my time in graduate school was to analyze the upper elevation limit of agriculture and agrobiodiversity change in the Peruvian Andes. For this project, I did an extensive literature review of on the remote sensing of agriculture and using machine learning techniques to classify crops by species. Unfortunately, I was unable to complete the remote sensing/machine learning portion of the project, due to unforeseen data limitations.For a while now, I have wanted to apply my skills I have learned from this experience.</p>
-<p>For this project, I used Random Forests and Support Vector Machine algorithms to classify four different crops in Yolo County, CA, which is just west of Sacramento. I used both R and Python for this project: R was used to clean the data, calculate vegetation indices, and to extract pixel values to the crop fields. Python (run in google colab) was used for machine learning.</p>
+<p>One of the research projects I worked on early during my time in graduate school was to analyze the upper elevation limit of agriculture and agrobiodiversity change in the Peruvian Andes. For this project, I did an extensive literature review on the remote sensing of agriculture and using machine learning techniques to classify crops by species. Unfortunately, I was unable to complete the remote sensing/machine learning portion of the project, due to unforeseen data limitations. For a while now, I have wanted to apply my skills I have learned from this experience.</p>
+<p>For this project, I used Random Forests and Support Vector Machine algorithms to classify four different crops in Yolo County, CA, which is just west of Sacramento. I used both R and Python for this project: R was used to clean the data, calculate vegetation indices, and to extract pixel values to the crop fields. Python (run in google colab) was used for running the machine learning algorithms.</p>
 <section id="part-1a-datasets" class="level4">
 <h4 class="anchored" data-anchor-id="part-1a-datasets"><strong>Part 1A: Datasets</strong></h4>
-<p>There were two datasets that were used in this project:</p>
+<p>Two datasets that were used in this project:</p>
 <ul>
 <li>Level 2A Sentinel-2 data of Yolo County, from June 28th, 2020</li>
 <li>A shapefile of Crops in Yolo County, CA for 2020 (from Esri Open Data/Yolo County)</li>
@@ -205,7 +205,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="part-1b-packages" class="level4">
 <h4 class="anchored" data-anchor-id="part-1b-packages"><strong>Part 1B: Packages</strong></h4>
-<p>Below are a list of the R packages I used for this project, and a brief explanation of how the package was used in this project.</p>
+<p>Below are a list of the R packages I used for this project, and a brief explanation of how the package was used in this project:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(raster) <span class="co">#Uploading sentinel data</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf) <span class="co">#Uploading crop shapefile</span></span>
@@ -214,9 +214,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(parallel) <span class="co">#For parallel processing</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(foreach) <span class="co">#For parallel processing</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(doParallel) <span class="co">#For parallel processing</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tictoc) <span class="co">#For parallel processing</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tictoc) <span class="co">#For parallel processing</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(reticulate) <span class="co">#For python compatability</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Below are a list of the Python packages I used for this project, and a brief explanation of how the package was used in this project.</p>
+<p>Below are a list of the Python packages I used for this project, and a brief explanation of how the package was used in this project:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd <span class="co">#For Data Manipulation</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns <span class="co">#For plotting confusion matrix</span></span>
@@ -229,7 +230,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="part-1c-functions-vegetation-indices" class="level4">
 <h4 class="anchored" data-anchor-id="part-1c-functions-vegetation-indices"><strong>Part 1C: Functions (Vegetation Indices)</strong></h4>
-<p>For this project, I created functions to calculate five vegetation indices that are present in the agricultural remote sensing literature:</p>
+<p>For this project, I created functions to calculate five vegetation indices that are present in the literature of the remote sensing of agriculture:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Enhanced Vegetation Index (EVI)</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>EVI <span class="ot">&lt;-</span> <span class="cf">function</span>(B2, B4, B8) {</span>
@@ -268,7 +269,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="part-2-data-preparation" class="level3">
 <h3 class="anchored" data-anchor-id="part-2-data-preparation"><strong>Part 2: Data Preparation</strong></h3>
-<p>The end goal of the data preparation section in R is to create a csv file of each walnut, almond, grape (wine) and olive field with following columns:</p>
+<p>The end goal of the data preparation section in R is to create a csv file of each walnut, almond, grape (wine) and olive field with the following columns:</p>
 <ul>
 <li>Crop Type of the field (walnut, almond, grape or olive) (1 column)</li>
 <li>The mean reflectance value for all pixels in a crop field for Band 2 (Blue), Band 3 (Green), Band 4 (Red), Band 5 (Red-Edge), Band 6 (Red-Edge), Band 7 (Red-Edge), Band 8 (NIR), Band 8a (NIR), Band 11 (SWIR), Band 12 (SWIR)</li>
@@ -276,7 +277,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <section id="part-2a-image-processing" class="level4">
 <h4 class="anchored" data-anchor-id="part-2a-image-processing"><strong>Part 2A: Image Processing</strong></h4>
-<p>There are two steps in this part. First, the bands from the satellite images must be divided by 10000 to get the reflectance values (the bands are not automatically at reflectance value due to storage and technical reasons). The code is pretty straightforward</p>
+<p>There are two steps in this part. First, the bands from the satellite images must be divided by 10000 to get the reflectance values (the bands are not automatically at reflectance value due to storage and technical reasons).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>){</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  YoloCoImages10m[[i]] <span class="ot">&lt;-</span>YoloCoImages10m[[i]] <span class="sc">/</span> <span class="dv">10000</span></span>
@@ -296,17 +297,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="part-2c-filtering-fields-by-crop-type" class="level4">
 <h4 class="anchored" data-anchor-id="part-2c-filtering-fields-by-crop-type"><strong>Part 2C: Filtering Fields by Crop Type</strong></h4>
-<p>The next part is to filter the crops dataset to include only the fields that are walnut, almond, grape (wine) or olive crops. These crops were selected because they had the highest number of observations in the dataset. This can be done using dplyr:</p>
+<p>The next part is to filter the crops dataset to include only the fields that are walnut, almond, grape (wine) or olive crops. These crops were selected because they had the highest number of observations in the dataset. Filtering was done using dplyr:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>Crops <span class="ot">&lt;-</span> Crops <span class="sc">%&gt;%</span> <span class="fu">filter</span>(croptype <span class="sc">==</span> <span class="st">"OLIVE"</span> <span class="sc">|</span> croptype <span class="sc">==</span> <span class="st">"WALNUT"</span> <span class="sc">|</span> </span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>                          croptype <span class="sc">==</span> <span class="st">"ALMOND"</span> <span class="sc">|</span> croptype <span class="sc">==</span> <span class="st">"GRAPE, WINE"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Note: This part can be done before extracting the pixel values, it depends on personal preference.</p>
+<p>Note: This part (2C) can be done before extracting the pixel values, it depends on personal preference.</p>
 </section>
 </section>
 <section id="part-3-machine-learning-classification" class="level3">
 <h3 class="anchored" data-anchor-id="part-3-machine-learning-classification"><strong>Part 3: Machine Learning Classification</strong></h3>
-<p>I ran two different machine learning models for classifying the crops, using the sklearn package in python: random forests and support vector machine (SVM). For the random forest model, the number of trees was 80. For the SVM model, I used a linear kernel and C parameter of 15. For both models, the train/test split was 70/30.</p>
+<p>I ran two different machine learning models for classifying the crops, using the sklearn package in python: random forests and linear support vector machine (SVM). For the random forest model, the number of trees was 80. For the SVM model, I used a linear kernel and C parameter of 15. For both models, the train/test split was 70/30.</p>
 <section id="part-3a-random-forests" class="level4">
 <h4 class="anchored" data-anchor-id="part-3a-random-forests"><strong>Part 3A: Random Forests</strong></h4>
 <p>Below is the code used for the running the random forests model:</p>
@@ -323,7 +324,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Training set score: </span><span class="sc">{:.4f}</span><span class="st">'</span>.<span class="bu">format</span>(forest.score(X_train, Y_train)))</span>
 <span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Test set score: </span><span class="sc">{:.4f}</span><span class="st">'</span>.<span class="bu">format</span>(forest.score(X_test, Y_test)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>The random forests classifier was very accurate, as the accuracy score for the training dataset was 100%, while the accuracy score the test dataset was 87%. However, the 13% difference between the training and test scores suggests overfitting. We can take a closer look into the classification of the crops using a confusion matrix:</p>
+<p>The random forests classifier was very accurate, as the accuracy score for the training dataset was 100%, while the accuracy score the test dataset was 87%. However, the 13% difference between the training and test datasets suggests overfitting. We can take a closer look into the classification of the crops using a confusion matrix:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Create confusion matrix for Random Forests</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> confusion_matrix</span>
@@ -334,17 +335,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>sns.heatmap(cm_matrix, annot<span class="op">=</span><span class="va">True</span>, fmt<span class="op">=</span><span class="st">'d'</span>, cmap<span class="op">=</span><span class="st">'YlGnBu'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="YoloCropsRF.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Caption</figcaption>
-</figure>
-</div>
-<p>Above is a confusion matrix for the test datasets and its predictions for the random forests model. The model was accurate 92.6% of the time for almonds, 86.6% of the time for grapes, 68.4% of the time for olives, and 82.5% of the time for walnuts. The most common misclassification was walnuts being classified as almonds (12 times)</p>
+<p><img src="YoloCropsRF.png" class="img-fluid" alt="Caption"> Above is a confusion matrix for the test dataset and its predictions for the random forests model. The model was accurate 92.6% of the time for almonds, 86.6% of the time for grapes,68.4% of the time for olives, and 82.5% of the time for walnuts. The most common misclassification was walnuts being classified as almonds (12 times).</p>
 </section>
 <section id="part-3b-support-vector-machine" class="level4">
 <h4 class="anchored" data-anchor-id="part-3b-support-vector-machine"><strong>Part 3B: Support Vector Machine</strong></h4>
-<p>There is one additional preprocessing steps that needs to take place before running the SVM model, which is to normalize the data:</p>
+<p>There is one additional preprocessing step that needs to take place before running the SVM model, which is to normalize the data:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Normalize the input data</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>X_norm<span class="op">=</span>preprocessing.scale(X)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -367,7 +362,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Training set score: </span><span class="sc">{:.4f}</span><span class="st">'</span>.<span class="bu">format</span>(linear_svc.score(X_train, Y_train)))</span>
 <span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Test set score: </span><span class="sc">{:.4f}</span><span class="st">'</span>.<span class="bu">format</span>(linear_svc.score(X_test, Y_test)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>The SVM classifier was less accurate than the random forests classifier, as the accuracy score for the training dataset was 88%, while the accuracy score the test dataset was 84%. However, the SVM model had less overfitting than the random forests model, with a 4% difference between the training and test scores. We can take a closer look into the classification of the crops using a confusion matrix:</p>
+<p>The SVM classifier was less accurate than the random forests classifier, as the accuracy score for the training dataset was 88%, while the accuracy score for the test dataset was 84%. However, the SVM model had less overfitting than the random forests model, with a 4% difference between the training and test scores. We can take a closer look into the classification of the crops using a confusion matrix:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Create confusion matrix for Random Forests</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> confusion_matrix</span>
@@ -384,7 +379,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="part-4-next-steps" class="level3">
 <h3 class="anchored" data-anchor-id="part-4-next-steps"><strong>Part 4: Next Steps</strong></h3>
 <p>In future, some improvements I would make to the project include:</p>
-<p><em>Expand the number of crops being classified.</em> Spend more time tuning the hyperparameters for the machine learning models. <em>Use neural networks to classify crop type.</em> Try to run the entire project in one language (R or Python).</p>
+<ul>
+<li>Expand the number of crops being classified.</li>
+<li>Spend more time tuning the hyper-parameters for the machine learning models.</li>
+<li>Use neural networks to classify crop type.</li>
+<li>Try to run the entire project in one language (R or Python).</li>
+</ul>
 
 
 </section>

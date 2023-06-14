@@ -205,7 +205,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="part-1b-packages" class="level4">
 <h4 class="anchored" data-anchor-id="part-1b-packages"><strong>Part 1B: Packages</strong></h4>
-<p>Below are a list of the packages I used for this project, and a brief explanation of the purpose of each package</p>
+<p>Below are a list of the packages I used for this project, and a brief explanation of the purpose of each package.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(raster) <span class="co">#For raster preprocessing</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf) <span class="co">#For loading the Ghana shapefile</span></span>
@@ -229,7 +229,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(raster.mask)</span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>The second function is RasterToDataframe, which streamlines the process of transforming a raster dataset into a dataframe. It uses the rasterToPoint function from the raster package to transform a raster in point data, and then uses the as.data.frame function to transform the point data into a dataframe. The resulting product is a dataframe with three variables: X Coordinate, Y Coordinate, and Value. The code for this function is below:</p>
+<p>The second function is RasterToDataframe, which streamlines the process of transforming a raster dataset into a dataframe. It uses the rasterToPoint function from the raster package to transform a raster into point data, and then uses the as.data.frame function to transform the point data into a dataframe. The resulting product is a dataframe with three variables: X Coordinate, Y Coordinate, and Value. The code for this function is below:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>RasterToDataframe &lt;- function(raster) {</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  raster.pts &lt;- rasterToPoints(raster)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  raster.df &lt;- as.data.frame(raster.pts)</span>
@@ -239,7 +239,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="part-2-image-processing" class="level3">
 <h3 class="anchored" data-anchor-id="part-2-image-processing"><strong>Part 2: Image Processing</strong></h3>
-<p>To ensure that the satellite rainfall was ready for animation, there were few preprocessing steps that occurred.</p>
+<p>To ensure that the satellite rainfall was ready for animation, a few preprocessing steps are required.</p>
 <section id="part-2a-converting-netcdf-files-into-rasters" class="level4">
 <h4 class="anchored" data-anchor-id="part-2a-converting-netcdf-files-into-rasters"><strong>Part 2a: Converting NetCDF files into Rasters</strong></h4>
 <p>There are two steps for converting the NetCDF files into rasters. The first to extract the variables from the netCDF/nc files.</p>
@@ -304,7 +304,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><img src="MeanRainfallTAMSAT.gif" class="img-fluid figure-img"></p>
 </figure>
 </div>
-<p>The animation does a good job at showing the general seasonal rainfall trends in Ghana. The animation, however, is a bit a clunky when it hits July, but this is because there is a small dry season in southern Ghana in July and August.</p>
+<p>The animation does a good job at showing the general seasonal rainfall trends in Ghana. The animation, however, is a bit a clunky when it hits July, but this is because there is a small dry season in southern Ghana during July and August, shifting the areas of high rainfall to the north.</p>
 </section>
 </section>
 <section id="next-stepsfuture-directions" class="level3">

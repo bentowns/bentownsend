@@ -1,0 +1,17 @@
+---
+title: "Heat Index Leaflet Map"
+author: "Ben Townsend"
+date: "2023-06-20"
+categories: [code, analysis, weather]
+execute: 
+  echo: true
+  eval: false
+image: "HeatIndexLeafletR.png"
+---
+
+[![Heat Index Leaflet Map](HeatIndexLeafletR.png)](https://bentowns.github.io/HeatIndexLeafletR.html)
+
+
+Something that I have been wanting to work on for a while is expanding my skills with interactive mapping, such as leaflet and mapbox (via plotly). This is the first version of a semi-detailed map, using R. I also made an interactive map using plotly in R, but the html file was not rendering the chororpleth map (if it's any consolation, it's that I like leaflet better than plotly for r). I've also started on making maps in python using folium and plotly, but I want to spend some more time customizing those maps (I'm not as comfortable with python as I am with R)
+
+To view the Leaflet map, click on the image above. The leaflet shows the mean number of extreme heat days (defined as a heat index greater 100 Fahrenheit) per year for the months of May to September for almost every county in the continental United States. The heat index data is from the CDC's Heat & Health Tracker.
